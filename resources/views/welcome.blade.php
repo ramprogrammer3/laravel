@@ -1,36 +1,18 @@
+@php
+    $fruits = ['apple','banana','orange','grapes'];
+@endphp
+
+@include('pages.header',['name'=>$fruits])
+
+@includeWhen(false,'pages.header',['arr'=>$fruits])
+
+@includeUnless(false,'pages.footer' )
+
 <div class="container">
     <h2>This is home page </h2>
     <h3>Blade template in laravel</h3>
 </div>
+@include('pages.footer')
 
-{{ 10 + 5 }}
+@includeIf('pages.content')
 
-{{ 'Ram kumar maniyari' }}
-<br><br>
-{!! '<h1>Ram kumar maniyari sitamarhi</h1>' !!}
-
-{{-- {!! "<script>alert('ram kumar')</script>"!!} --}}
-
-
-{{-- {{$user}} --}}
-
-@php
-    $userName = 'Piku kumar';
-    $arr = ['ram', 'rohan', 'kavita', 'sarita', 'savita', 'babita'];
-@endphp
-
-{{ "User name is $userName" }}
-<br><br>
-<ul>
-    @foreach ($arr as $name)
-        @if ($loop->even)
-            <li style="color:red">{{ $loop->index }} {{ $name }} </li>
-        @else
-            <li style="color:blue">{{ $loop->index }} {{ $name }} </li>
-        @endif
-    @endforeach
-</ul>
-
-@{{ $userName }}
-
-@@if()

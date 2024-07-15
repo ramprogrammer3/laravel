@@ -29,7 +29,7 @@
 
         <div class="row">
             <div class="col-md-9">
-                <h3>Home page </h3>
+                <h3>About page  </h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis eum nisi molestias quidem
                     quibusdam accusantium recusandae, veritatis et neque eligendi illum sint repellat ipsa voluptatibus
                     blanditiis repellendus ratione vero dicta eaque cumque excepturi maxime exercitationem, molestiae

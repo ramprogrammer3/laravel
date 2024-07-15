@@ -6,46 +6,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
+Route::get('/text', function () {
     return view('about');
 });
 
-Route::get('/post/{id?}', function (string $id = null) {
-    if ($id) {
-        return "<h2>Post id is $id </h2>";
-    } else {
-        return "<h2>There is no any id exist.</h2>";
-    }
-})->whereAlpha('id');
-
-
-Route::get('/post/{id?}', function (string $id = null) {
-    if ($id) {
-        return "<h2>Post id is $id </h2>";
-    } else {
-        return "<h2>There is no any id exist.</h2>";
-    }
-})->whereNumber('id');
-
-
-Route::get('/post/{id?}', function (string $id = null) {
-    if ($id) {
-        return "<h2>Post id is $id </h2>";
-    } else {
-        return "<h2>There is no any id exist.</h2>";
-    }
+Route::get('/post', function () {
+    return view("post");
 });
 
-// multiple parameter value
+Route::get('/product', function () {
+    return view("product");
+})->name('mypost');
 
-Route::get("/post/{id?}/comment/{commentId?}", function (string $id = null, string $commentId = null) {
-    if ($id) {
-        return "<h2>Post id is $id and comment id = $commentId </h2>";
-    } else {
-        return "<h2>There is no any id exist.</h2>";
-    }
-});
+Route::redirect("/about", "/text", 301);
 
-Route::get('/post/1', function () {
-    return view('post1');
+// page not found page here
+Route::fallback(function () {
+    return "<h1> Page not found here </h1>";
 });
